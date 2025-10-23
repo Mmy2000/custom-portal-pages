@@ -1,0 +1,59 @@
+{% extends 'templates/homeland_base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-center min-h-screen">
+
+    <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">{{ message }}</h2>
+
+        <form id="login-form" class="space-y-5">
+            <div>
+                <label class="block text-gray-600 mb-1">Email or Username</label>
+                <input type="text" name="usr" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200 focus:border-blue-500 outline-none">
+            </div>
+
+            <div>
+                <label class="block text-gray-600 mb-1">Password</label>
+                <input type="password" name="pwd" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200 focus:border-blue-500 outline-none">
+            </div>
+
+            <button type="submit"
+                class="w-full bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 transition">
+                Login
+            </button>
+        </form>
+
+        <p id="response_message" class="text-red-500 text-center mt-4"></p>
+    </div>
+
+</div>
+
+<script>
+    const isLoggedIn = {{ is_logged_in | lower }};
+    if (isLoggedIn) {
+        window.location.href = "/app";
+    }
+
+    document.getElementById("login-form").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const data = new URLSearchParams(formData);
+
+        const response = await fetch("/api/method/login", {
+            method: "POST",
+            body: data,
+        });
+
+        if (response.ok) {
+            window.location.href = "/app";
+        } else {
+            document.getElementById("response_message").innerText = "Invalid login";
+        }
+    });
+</script>
+{% endblock %}

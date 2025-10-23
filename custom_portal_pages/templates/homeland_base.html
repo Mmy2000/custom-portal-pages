@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }}{% else %}My Site{% endif %}</title>
+
+    <!-- Tailwind CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- ✅ Navbar -->
+    <header class="w-full fixed top-0 left-0 bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+            <div class="text-2xl font-bold">LOGO</div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
+                <a href="/about" class="text-gray-700 hover:text-blue-600">About</a>
+                <a href="/rooms" class="text-gray-700 hover:text-blue-600">Rooms</a>
+                <a href="/facilities" class="text-gray-700 hover:text-blue-600">Facilities</a>
+                <a href="/gallery" class="text-gray-700 hover:text-blue-600">Gallery</a>
+                <a href="/gallery" class="text-gray-700 hover:text-blue-600">Location</a>
+                <a href="/contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+            </nav>
+            <a href="/book"
+                class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-md font-semibold">Book Now</a>
+        </div>
+    </header>
+
+    <!-- ✅ Hero Section (Only show on certain pages if needed) -->
+    {% block hero %}
+<section 
+    class="relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-white"
+    style="background-image: url('/assets/custom_portal_pages/homeland/images/villa_1.jpg');"
+>
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Experience Luxury & Comfort</h1>
+        <p class="text-lg md:text-xl max-w-xl mx-auto">
+            Welcome to our hotel — where hospitality meets serenity.
+        </p>
+        <a href="/book"
+            class="mt-6 inline-block bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded-md font-semibold">
+            Book Your Stay
+        </a>
+    </div>
+</section>
+{% endblock %}
+
+
+    <!-- ✅ Main content block -->
+    <main class="max-w-6xl mx-auto py-12 px-6">
+        {% block content %}{% endblock %}
+    </main>
+
+        <!-- ✅ Footer -->
+    <footer class="bg-[#1a2253] text-white py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- Logo & Description -->
+            <div>
+                <img src="/assets/custom_portal_pages/homeland/images/logo.png" alt="Logo" class="w-24 mb-4">
+                <p class="text-sm">Experience luxury and comfort in the heart of Madinah.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="font-semibold text-lg mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/" class="hover:text-orange-400">Home</a></li>
+                    <li><a href="/about" class="hover:text-orange-400">About</a></li>
+                    <li><a href="/rooms" class="hover:text-orange-400">Rooms</a></li>
+                    <li><a href="/contact" class="hover:text-orange-400">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="font-semibold text-lg mb-4">Contact</h3>
+                <p class="text-sm">Phone: +966 (0) 14 826 1234</p>
+                <p class="text-sm">Email: info@sidrahotel.com</p>
+                <p class="text-sm">Madinah, Saudi Arabia</p>
+            </div>
+
+            <!-- Social Links -->
+            <div>
+                <h3 class="font-semibold text-lg mb-4">Follow Us</h3>
+                <div class="flex space-x-4 text-xl">
+                    <a href="#" class="hover:text-orange-400"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-orange-400"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-orange-400"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-orange-400"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-gray-600 mt-8 pt-4 text-center text-sm">
+            © {{ frappe.utils.nowdate().split('-')[0] }} Sidra International Hotel. All Rights Reserved.
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
