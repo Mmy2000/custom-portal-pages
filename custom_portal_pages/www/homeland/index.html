@@ -1,0 +1,134 @@
+{% extends 'templates/homeland_base.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+
+<section class=" mx-auto py-20  grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <!-- Left Image -->
+    <div class="">
+        <img src="/assets/custom_portal_pages/homeland/images/villa_1.jpg" 
+             alt="Hotel Interior"
+             class="w-full rounded-2xl shadow-lg object-cover">
+    </div>
+
+    <!-- Right Text Content -->
+    <div class="">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a2253] mb-6">
+            About Sidra International Hotel
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+            Sidra International Hotel offers guests a peaceful retreat in the holy
+            city of Madinah. With elegant rooms, exceptional service, and close
+            proximity to Al-Masjid An-Nabawi, we ensure an unforgettable stay for
+            every guest.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-10">
+            Our commitment to excellence and Islamic hospitality traditions makes
+            us the preferred choice for pilgrims and travelers seeking comfort and
+            spiritual tranquility.
+        </p>
+
+        <!-- Stats Section -->
+        <div class="grid grid-cols-3 gap-6">
+            <div>
+                <p class="text-2xl font-bold text-orange-500">500+</p>
+                <p class="text-gray-600 text-sm">Luxury Rooms</p>
+            </div>
+            <div>
+                <p class="text-2xl font-bold text-orange-500">24/7</p>
+                <p class="text-gray-600 text-sm">Concierge Service</p>
+            </div>
+            <div>
+                <p class="text-2xl font-bold text-orange-500">20+</p>
+                <p class="text-gray-600 text-sm">Years Experience</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Rooms & Suites Section -->
+<section class=" py-20">
+    <div class=" mx-auto  ">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a2253] mb-4 text-center">
+            Elegant Rooms & Luxurious Suites
+        </h2>
+        <p class="text-gray-600 mb-12 max-w-2xl mx-auto text-center">
+            Choose from a range of beautifully designed rooms and suites, each equipped with modern amenities to provide ultimate comfort.
+        </p>
+
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
+                <img src="/assets/custom_portal_pages/homeland/images/room1.jpg" alt="Deluxe Room" class="w-full">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-semibold mb-2">Deluxe Room</h3>
+                    <p class="text-gray-600 text-sm mb-4">Spacious, modern, and designed for relaxation with premium amenities.</p>
+                    <ul class="text-sm text-gray-700 mb-6 space-y-2">
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> King Bed</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> City View</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Modern Bathroom</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Free Wi-Fi</li>
+                    </ul>
+                    <a href="#" class="mt-auto bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-full font-medium transition text-center">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
+                <img src="/assets/custom_portal_pages/homeland/images/room2.jpg" alt="Executive Suite" class="w-full">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-semibold mb-2">Executive Suite</h3>
+                    <p class="text-gray-600 text-sm mb-4">Spacious, modern, and designed for relaxation with premium amenities.</p>
+                    <ul class="text-sm text-gray-700 mb-6 space-y-2">
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Living Area</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Work Desk</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Premium Bathroom</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Complimentary Breakfast</li>
+                    </ul>
+                    <a href="#" class="mt-auto bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-full font-medium transition text-center">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
+                <img src="/assets/custom_portal_pages/homeland/images/room3.jpg" alt="Family Suite" class="w-full">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-semibold mb-2">Family Suite</h3>
+                    <p class="text-gray-600 text-sm mb-4">Spacious, modern, and designed for relaxation with premium amenities.</p>
+                    <ul class="text-sm text-gray-700 mb-6 space-y-2">
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Multiple Rooms</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Kitchen</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Dining Area</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Family Lounge</li>
+                    </ul>
+                    <a href="#" class="mt-auto bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-full font-medium transition text-center">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
+                <img src="/assets/custom_portal_pages/homeland/images/room4.jpg" alt="Royal Suite" class="w-full">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-semibold mb-2">Royal Suite</h3>
+                    <p class="text-gray-600 text-sm mb-4">Spacious, modern, and designed for relaxation with premium amenities.</p>
+                    <ul class="text-sm text-gray-700 mb-6 space-y-2">
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Panoramic View</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Jacuzzi</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Private Terrace</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Concierge Service</li>
+                    </ul>
+                    <a href="#" class="mt-auto bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-full font-medium transition text-center">View Details</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock %}
