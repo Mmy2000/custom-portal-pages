@@ -61,68 +61,25 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
             <!-- Card 1 -->
+            {% for room in rooms %}
             <div class="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
-                <img src="/assets/custom_portal_pages/homeland/images/room1.jpg" alt="Deluxe Room" class="w-full">
+                <img src="{{ room.hotel_image }}" alt="{{ room.name }}" class="w-full">
                 <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-semibold mb-2">Deluxe Room</h3>
+                    <h3 class="text-xl font-semibold mb-2">{{room.room_type}}</h3>
                     <p class="text-gray-600 text-sm mb-4">Spacious, modern, and designed for relaxation with premium amenities.</p>
                     <ul class="text-sm text-gray-700 mb-6 space-y-2">
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> King Bed</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> City View</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Modern Bathroom</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Free Wi-Fi</li>
+                        {% for amenity in room.amenities %}
+            <li class="flex items-center gap-2">
+                <span class="text-orange-400 text-lg">•</span> {{ amenity }}
+            </li>
+            {% endfor %}
                     </ul>
                     <a href="#" class="mt-auto bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-full font-medium transition text-center">View Details</a>
                 </div>
             </div>
+            {% endfor %}
 
-            <!-- Card 2 -->
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
-                <img src="/assets/custom_portal_pages/homeland/images/room2.jpg" alt="Executive Suite" class="w-full">
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-semibold mb-2">Executive Suite</h3>
-                    <p class="text-gray-600 text-sm mb-4">Spacious, modern, and designed for relaxation with premium amenities.</p>
-                    <ul class="text-sm text-gray-700 mb-6 space-y-2">
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Living Area</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Work Desk</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Premium Bathroom</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Complimentary Breakfast</li>
-                    </ul>
-                    <a href="#" class="mt-auto bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-full font-medium transition text-center">View Details</a>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
-                <img src="/assets/custom_portal_pages/homeland/images/room3.jpg" alt="Family Suite" class="w-full">
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-semibold mb-2">Family Suite</h3>
-                    <p class="text-gray-600 text-sm mb-4">Spacious, modern, and designed for relaxation with premium amenities.</p>
-                    <ul class="text-sm text-gray-700 mb-6 space-y-2">
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Multiple Rooms</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Kitchen</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Dining Area</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Family Lounge</li>
-                    </ul>
-                    <a href="#" class="mt-auto bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-full font-medium transition text-center">View Details</a>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
-                <img src="/assets/custom_portal_pages/homeland/images/room4.jpg" alt="Royal Suite" class="w-full">
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-semibold mb-2">Royal Suite</h3>
-                    <p class="text-gray-600 text-sm mb-4">Spacious, modern, and designed for relaxation with premium amenities.</p>
-                    <ul class="text-sm text-gray-700 mb-6 space-y-2">
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Panoramic View</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Jacuzzi</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Private Terrace</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-400 text-lg">•</span> Concierge Service</li>
-                    </ul>
-                    <a href="#" class="mt-auto bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-full font-medium transition text-center">View Details</a>
-                </div>
-            </div>
+   
 
         </div>
     </div>
