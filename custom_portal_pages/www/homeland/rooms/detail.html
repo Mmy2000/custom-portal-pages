@@ -1,8 +1,60 @@
 {% extends 'templates/homeland_base.html' %}
 
-{% block title %}Home Page{% endblock %}
+{% block title %}{{ room.room_type }} - Details{% endblock %}
 
 {% block content %}
+<section class="max-w-6xl mx-auto py-20 px-6">
+    
+    <!-- Room Header -->
+    <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+            {{ room.room_type }}
+        </h1>
+        <p class="text-gray-500 mt-3 text-lg">Hotel: <span class="font-medium text-gray-700">{{ room.hotel }}</span></p>
+    </div>
 
+    <!-- Room Images -->
+    {% if room.images %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {% for img in room.images %}
+        <div class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-[1.02] transition duration-300">
+            <img src="{{ img.image }}" alt="Room Image" class="w-full h-64 object-cover">
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-gray-500 text-center mb-12 italic">No images available for this room.</p>
+    {% endif %}
 
+    <!-- Room Info -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 mb-16 border border-gray-100">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-circle-info text-orange-500"></i> Room Information
+        </h2>
+        <ul class="space-y-3 text-gray-700">
+            <li><strong class="text-gray-900">Item:</strong> {{ room.item_id }}</li>
+            <li><strong class="text-gray-900">Room Type:</strong> {{ room.room_type }}</li>
+            <li><strong class="text-gray-900">Hotel:</strong> {{ room.hotel }}</li>
+        </ul>
+    </div>
+
+    <!-- Amenities -->
+    {% if related_amenities %}
+    <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-inner p-10 border border-orange-100">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-8 flex items-center gap-2">
+            <i class="fa-solid fa-gem text-orange-500"></i> Amenities
+        </h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {% for amenity in related_amenities %}
+            <li class="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:border-orange-300 transition duration-300">
+                <span class="text-orange-500 text-xl"><i class="fa-solid fa-circle-check"></i></span>
+                <span class="text-gray-800 font-medium">{{ amenity.title }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <p class="text-gray-500 text-center italic mt-12">No amenities listed for this room.</p>
+    {% endif %}
+</section>
 {% endblock %}

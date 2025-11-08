@@ -7,5 +7,9 @@ def get_context(context):
     context.room = room
     context.page_title = room.name
     context.meta_description = room.room_type
-
+    context.related_amenities = frappe.get_all(
+        "Amenities",
+        filters={"name": ["in", [amenity.amenity_id for amenity in room.amenities]]},
+        fields=["title"],
+    )
     return context
