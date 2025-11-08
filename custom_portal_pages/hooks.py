@@ -1,9 +1,13 @@
+from custom_portal_pages.route import routes
+
+
 app_name = "custom_portal_pages"
 app_title = "Custom Portal Pages"
 app_publisher = "admin"
 app_description = "Custom Portal Pages"
 app_email = "my552915@gmail.com"
 app_license = "mit"
+
 
 # Apps
 # ------------------
@@ -63,6 +67,8 @@ app_license = "mit"
 # role_home_page = {
 # 	"Role": "home_page"
 # }
+
+website_route_rules = routes
 
 # Generators
 # ----------
@@ -241,4 +247,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

@@ -14,18 +14,19 @@
 <body class="">
 
     <!-- ✅ Navbar -->
-    <header class="w-full fixed top-0 left-0 bg-white shadow-md z-50">
+    <header class="w-full fixed top-0 left-0 bg-transparent transition-all duration-300 z-50">
         <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
-            <div class="text-2xl font-bold">LOGO</div>
-            <nav class="hidden md:flex space-x-6">
-                <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
-                <a href="/about" class="text-gray-700 hover:text-blue-600">About</a>
-                <a href="/rooms" class="text-gray-700 hover:text-blue-600">Rooms</a>
-                <a href="/facilities" class="text-gray-700 hover:text-blue-600">Facilities</a>
-                <a href="/gallery" class="text-gray-700 hover:text-blue-600">Gallery</a>
-                <a href="/gallery" class="text-gray-700 hover:text-blue-600">Location</a>
-                <a href="/contact" class="text-gray-700 hover:text-blue-600">Contact</a>
-            </nav>
+            <div id="logo" class="text-2xl font-bold text-white">LOGO</div>
+            <nav id="navbar-links" class="hidden md:flex space-x-6 text-white transition-all duration-300">
+    <a href="/" class="hover:text-orange-400">Home</a>
+    <a href="/about" class="hover:text-orange-400">About</a>
+    <a href="/rooms" class="hover:text-orange-400">Rooms</a>
+    <a href="/facilities" class="hover:text-orange-400">Facilities</a>
+    <a href="/gallery" class="hover:text-orange-400">Gallery</a>
+    <a href="/location" class="hover:text-orange-400">Location</a>
+    <a href="/contact" class="hover:text-orange-400">Contact</a>
+</nav>
+
             <a href="/book"
                 class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-md font-semibold transition">Book Now</a>
         </div>
@@ -106,6 +107,30 @@
             © {{ frappe.utils.nowdate().split('-')[0] }} Sidra International Hotel. All Rights Reserved.
         </div>
     </footer>
+
+
+    <script>
+    window.addEventListener("scroll", function() {
+        const header = document.querySelector("header");
+        const navLinks = document.getElementById("navbar-links");
+        const logo = document.getElementById("logo");
+        if (window.scrollY > 50) {
+            header.classList.add("bg-white", "shadow-md");
+            header.classList.remove("bg-transparent");
+            navLinks.classList.remove("text-white");
+            navLinks.classList.add("text-gray-700");
+            logo.classList.remove("text-white");
+            logo.classList.add("text-gray-700");
+        } else {
+            header.classList.remove("bg-white", "shadow-md");
+            header.classList.add("bg-transparent");
+            navLinks.classList.add("text-white");
+            navLinks.classList.remove("text-gray-700");
+            logo.classList.add("text-white");
+            logo.classList.remove("text-gray-700");
+        }
+    });
+</script>
 
 
 </body>
